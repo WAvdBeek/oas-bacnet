@@ -1,0 +1,228 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "BACnet String",
+    "version": "2019-03-04",
+    "license": {
+      "name": " License",
+      "url": " ",
+      "x-copyright": " ."
+    },
+    "termsOfService": "  "
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ActivityResURI": {
+      "get": {
+        "description": "BACnet string resource",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "rt": [
+                "x.bacnet.string"
+              ],
+              "nodeType":   "Property" ,
+              "nodeSubType": "Property",
+              "DisplayName":  "DisplayName",
+              "Description":  "Description",
+              "ValueType":   "String",
+              "Value" : "",
+              "Writable": true,
+              "inAlarm": false,
+              "MinimumLength": 0,
+              "MaximumLength": 100,
+              "IsMultiLine": false,
+              "Attributes": ["Attributes"],
+              "WriteableValues": ["DisplayName", "Value"],
+              "PossibleValues": ["PossibleValues"],
+              "Overridden": false,
+              "ValueAge" : 123,
+              "Aliases" : ["alias"],
+              "Children" : ["child"],
+              "Reference" : "Reference",
+              "HasHistory" : false,
+              "SinglyWritableLocales" : [""],
+              "HasDynamicChildren" : false
+            },
+            "schema": {
+              "$ref": "#/definitions/BACnetreal"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "This Resource describes the Properties associated with Real.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/BACnetstring-update" },
+            "x-example": {
+              "Value":   "new string"
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "nodeType":   "Property" ,
+              "ValueType":   "String",
+              "Value":     "new string"
+            },
+            "schema": {
+              "$ref": "#/definitions/BACnetstring"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "interface": {
+      "in": "query",
+      "name": "if",
+      "type": "string",
+      "enum": [
+        "oic.if.rw",
+        "oic.if.baseline"
+      ]
+    }
+  },
+  "definitions": {
+    "BACnetreal": {
+      "properties": {
+        "nodeType":    {
+          "description": "The type of the node.",
+          "type": "string",
+          "enum" : ["String"]
+          "readOnly": true
+        },
+        "nodeSubtype": {
+          "description": "The sub type of the node.",
+          "type": "string",
+          "readOnly": true
+        },
+        "DisplayName": {
+          "description": "The Display name",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The Description.",
+          "type": "string"
+        },
+        "ValueType": {
+          "description": "The value type of the object.",
+          "type": "string",
+          "enum" : ["String"],
+          "readOnly": true
+        },
+        "Value": {
+          "description": "The 'string' value of the object.",
+          "type": "string"
+        }
+        "InAlarm": {
+          "description": "The alarm state",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "MinimumLength": {
+            "description": "minimum lenght of the string",
+            "type": "integer",
+            "readOnly": true
+        },
+        "MaximumLength": {
+            "description": "maximum lenght of the string",
+            "type": "integer",
+            "readOnly": true
+        },
+        "isMultiLine": {
+          "description": "is multi line.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Attributes": {
+          "description": "The Attributes supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "rt": {
+          "description": "The Resource Type.",
+          "items": {
+            "enum": [
+              "x.bacnet.string"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "if": {
+          "description": "The OCF Interface set supported by this Resource.",
+          "items": {
+            "enum": [
+              "oic.if.rw", "oic.if.baseline"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "required": [
+        "NodeType",
+        "ValueType",
+        "Value",
+        "Units",
+        "Writeable",
+        "Attributes",
+        "Aliases"
+      ]
+    },
+      "BACnetreal-update": {
+      "properties": {
+        "DisplayName": {
+          "description": "The Display name",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The Description.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The 'real' value of the object.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
