@@ -35,8 +35,8 @@
               "rt": [
                 "x.bacnet.AnalogValueObject"
               ],
-              "nodeType":   "Property" ,
-              "nodeSubType": "Property",
+              "NodeType":   "Property" ,
+              "NodeSubType": "Property",
               "DisplayName":  "DisplayName",
               "Description":  "Description",
               "ValueType":   "Real",
@@ -87,7 +87,7 @@
           "200": {
             "description": "",
             "x-example": {
-              "nodeType":   "Property" ,
+              "NodeType":   "Property" ,
               "ValueType":   "Real",
               "Value":     3.5
             },
@@ -113,13 +113,13 @@
   "definitions": {
     "BACnetreal": {
       "properties": {
-        "nodeType":    {
+        "NodeType":    {
           "description": "The type of the node.",
           "type": "string",
           "enum" : ["Real"],
           "readOnly": true
         },
-        "nodeSubtype": {
+        "NodeSubtype": {
           "description": "The sub type of the node.",
           "type": "string",
           "readOnly": true
@@ -171,6 +171,20 @@
           "description": "is multi line.",
           "type": "boolean",
           "readOnly": true
+        },
+        "Writeable": {
+          "description": "is value writable.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Aliases": {
+          "description": "The Aliasses supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
         },
         "Attributes": {
           "description": "The Attributes supported by this Resource.",

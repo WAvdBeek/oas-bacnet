@@ -35,8 +35,8 @@
               "rt": [
                 "x.bacnet.BinaryValueObject"
               ],
-              "nodeType":   "Property" ,
-              "nodeSubType": "Property",
+              "NodeType":   "Property" ,
+              "NodeSubType": "Property",
               "DisplayName":  "DisplayName",
               "Description":  "Description",
               "ValueType":   "Boolean",
@@ -62,6 +62,37 @@
             }
           }
         }
+      },
+      "post": {
+        "description": "This Resource describes the Properties associated with Real.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/BACnetboolean-update" },
+            "x-example": {
+              "Value":   true
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "NodeType":   "Property" ,
+              "ValueType":   "Boolean",
+              "Value":     true
+            },
+            "schema": {
+              "$ref": "#/definitions/BACnetboolean"
+            }
+          }
+        }
       }
     }
   },
@@ -79,13 +110,13 @@
   "definitions": {
     "BACnetboolean": {
       "properties": {
-        "nodeType":    {
+        "NodeType":    {
           "description": "The type of the node.",
           "type": "string",
           "enum" : ["Boolean"],
           "readOnly": true
         },
-        "nodeSubtype": {
+        "NodeSubtype": {
           "description": "The sub type of the node.",
           "type": "string",
           "readOnly": true
@@ -122,6 +153,20 @@
           "description": "is multi line.",
           "type": "boolean",
           "readOnly": true
+        },
+        "Writeable": {
+          "description": "is value writable.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Aliases": {
+          "description": "The Aliasses supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
         },
         "Attributes": {
           "description": "The Attributes supported by this Resource.",
@@ -174,8 +219,31 @@
       },
       "type": "object",
       "required": [
-        "payload"
+        "NodeType",
+        "ValueType",
+        "Value",
+        "Units",
+        "Writeable",
+        "Attributes",
+        "Aliases"
       ]
+    },
+    "BACnetboolean-update": {
+      "properties": {
+        "DisplayName": {
+          "description": "The Display name",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The Description.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The 'Integer' value of the object.",
+          "type": "integer"
+        }
+      },
+      "type": "object"
     }
   }
 }
