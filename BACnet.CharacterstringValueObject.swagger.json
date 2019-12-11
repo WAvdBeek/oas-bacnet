@@ -35,8 +35,8 @@
               "rt": [
                 "x.bacnet.CharacterstringValueObject"
               ],
-              "nodeType":   "Property" ,
-              "nodeSubType": "Property",
+              "NodeType":   "Property" ,
+              "NodeSubType": "Property",
               "DisplayName":  "DisplayName",
               "Description":  "Description",
               "ValueType":   "String",
@@ -59,7 +59,7 @@
               "HasDynamicChildren" : false
             },
             "schema": {
-              "$ref": "#/definitions/BACnetreal"
+              "$ref": "#/definitions/BACnetstring"
             }
           }
         }
@@ -85,7 +85,7 @@
           "200": {
             "description": "",
             "x-example": {
-              "nodeType":   "Property" ,
+              "NodeType":   "Property" ,
               "ValueType":   "String",
               "Value":     "new string"
             },
@@ -109,15 +109,15 @@
     }
   },
   "definitions": {
-    "BACnetreal": {
+    "BACnetstring": {
       "properties": {
-        "nodeType":    {
+        "NodeType":    {
           "description": "The type of the node.",
           "type": "string",
           "enum" : ["String"],
           "readOnly": true
         },
-        "nodeSubtype": {
+        "NodeSubtype": {
           "description": "The sub type of the node.",
           "type": "string",
           "readOnly": true
@@ -160,6 +160,20 @@
           "type": "boolean",
           "readOnly": true
         },
+        "Writeable": {
+          "description": "is value writable.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Aliases": {
+          "description": "The Aliasses supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
         "Attributes": {
           "description": "The Attributes supported by this Resource.",
           "items": {
@@ -201,7 +215,6 @@
         "NodeType",
         "ValueType",
         "Value",
-        "Units",
         "Writeable",
         "Attributes",
         "Aliases"
