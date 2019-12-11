@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "BACnet Real",
-    "version": "2019-03-04",
+    "title": "BACnet 0-AnalogValueObject",
+    "version": "2019-12-11",
     "license": {
       "name": " License",
       "url": " ",
@@ -22,7 +22,7 @@
   "paths": {
     "/ActivityResURI": {
       "get": {
-        "description": "BACnet real resource",
+        "description": "BACnet 0-AnalogValueObject resource",
         "parameters": [
           {
             "$ref": "#/parameters/interface"
@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.real"
+                "x.bacnet.AnalogValueObject"
               ],
               "nodeType":   "Property" ,
               "nodeSubType": "Property",
@@ -185,7 +185,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.boolean"
+              "x.bacnet.AnalogValueObject"
             ],
             "type": "string"
           },
@@ -230,7 +230,7 @@
           "type": "string"
         },
         "Value": {
-          "description": "The 'real' value of the object.",
+          "description": "The 'analog' value of the object.",
           "type": "number"
         }
       },
