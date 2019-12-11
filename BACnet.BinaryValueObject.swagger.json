@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "BACnet boolean",
-    "version": "2019-03-04",
+    "title": "BACnet 0-BinaryValueObject",
+    "version": "2019-12-11",
     "license": {
       "name": " License",
       "url": " ",
@@ -22,7 +22,7 @@
   "paths": {
     "/ActivityResURI": {
       "get": {
-        "description": "BACnet boolean resource",
+        "description": "BACnet BinaryValueObject resource.",
         "parameters": [
           {
             "$ref": "#/parameters/interface"
@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.boolean"
+                "x.bacnet.BinaryValueObject"
               ],
               "nodeType":   "Property" ,
               "nodeSubType": "Property",
@@ -149,7 +149,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.boolean"
+              "x.bacnet.BinaryValueObject"
             ],
             "type": "string"
           },
