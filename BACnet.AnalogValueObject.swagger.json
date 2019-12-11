@@ -116,7 +116,7 @@
         "nodeType":    {
           "description": "The type of the node.",
           "type": "string",
-          "enum" : ["Real"]
+          "enum" : ["Real"],
           "readOnly": true
         },
         "nodeSubtype": {

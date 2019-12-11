@@ -82,7 +82,7 @@
         "nodeType":    {
           "description": "The type of the node.",
           "type": "string",
-          "enum" : ["Boolean"]
+          "enum" : ["Boolean"],
           "readOnly": true
         },
         "nodeSubtype": {

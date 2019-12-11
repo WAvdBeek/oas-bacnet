@@ -114,7 +114,7 @@
         "nodeType":    {
           "description": "The type of the node.",
           "type": "string",
-          "enum" : ["String"]
+          "enum" : ["String"],
           "readOnly": true
         },
         "nodeSubtype": {
@@ -139,7 +139,7 @@
         "Value": {
           "description": "The 'string' value of the object.",
           "type": "string"
-        }
+        },
         "InAlarm": {
           "description": "The alarm state",
           "type": "boolean",
