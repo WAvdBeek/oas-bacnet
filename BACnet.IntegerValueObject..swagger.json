@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "BACnet Integer",
-    "version": "2019-03-04",
+    "version": "2019-12-11",
     "license": {
       "name": " License",
       "url": " ",
@@ -22,7 +22,7 @@
   "paths": {
     "/ActivityResURI": {
       "get": {
-        "description": "BACnet Integer resource",
+        "description": "BACnet 0-IntegerValueObject",
         "parameters": [
           {
             "$ref": "#/parameters/interface"
@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.integer"
+                "x.bacnet.0.IntegerValueObject"
               ],
               "nodeType":   "Property" ,
               "nodeSubType": "Property",
@@ -61,7 +61,7 @@
               "HasDynamicChildren" : false
             },
             "schema": {
-              "$ref": "#/definitions/BACnetreal"
+              "$ref": "#/definitions/BACnetinteger"
             }
           }
         }
@@ -185,7 +185,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.boolean"
+              "x.bacnet.0.IntegerValueObject"
             ],
             "type": "string"
           },
