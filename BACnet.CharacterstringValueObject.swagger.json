@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "BACnet String",
-    "version": "2019-03-04",
+    "title": "BACnet 0-CharacterstringValueObject",
+    "version": "2019-12-11",
     "license": {
       "name": " License",
       "url": " ",
@@ -22,7 +22,7 @@
   "paths": {
     "/ActivityResURI": {
       "get": {
-        "description": "BACnet string resource",
+        "description": "BACnet CharacterstringValueObject resource",
         "parameters": [
           {
             "$ref": "#/parameters/interface"
@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.string"
+                "x.bacnet.CharacterstringValueObject"
               ],
               "nodeType":   "Property" ,
               "nodeSubType": "Property",
@@ -173,7 +173,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.string"
+              "x.bacnet.CharacterstringValueObject"
             ],
             "type": "string"
           },
@@ -207,7 +207,7 @@
         "Aliases"
       ]
     },
-      "BACnetreal-update": {
+    "BACnetstring-update": {
       "properties": {
         "DisplayName": {
           "description": "The Display name",
@@ -218,7 +218,7 @@
           "type": "string"
         },
         "Value": {
-          "description": "The 'real' value of the object.",
+          "description": "The 'string' value of the object.",
           "type": "string"
         }
       },
