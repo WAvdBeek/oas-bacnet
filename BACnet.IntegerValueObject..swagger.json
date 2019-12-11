@@ -111,7 +111,7 @@
     }
   },
   "definitions": {
-    "BACnetreal": {
+    "BACnetinteger": {
       "properties": {
         "nodeType":    {
           "description": "The type of the node.",
