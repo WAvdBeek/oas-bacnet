@@ -1,0 +1,251 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "BACnet 0-AnalogInputObject",
+    "version": "2019-12-11",
+    "license": {
+      "name": " License",
+      "url": " ",
+      "x-copyright": " ."
+    },
+    "termsOfService": "  "
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ActivityResURI": {
+      "get": {
+        "description": "BACnet 0-AnalogInputObject resource",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "rt": [
+                "x.bacnet.AnalogInputObject"
+              ],
+              "NodeType":   "Property" ,
+              "NodeSubType": "Property",
+              "DisplayName":  "DisplayName",
+              "Description":  "Description",
+              "ValueType":   "Real",
+              "Value" : 2.5,
+              "Units" : "Units",
+              "Writable": true,
+              "inAlarm": false,
+              "Minimum": 0.0,
+              "Maximum": 100.0,
+              "Resolution" : 0.5,
+              "IsMultiLine": false,
+              "Attributes": ["Attributes"],
+              "WriteableValues": ["DisplayName", "Value"],
+              "PossibleValues": ["PossibleValues"],
+              "Overridden": false,
+              "ValueAge" : 123,
+              "Aliases" : ["alias"],
+              "Children" : ["child"],
+              "Reference" : "Reference",
+              "HasHistory" : false,
+              "SinglyWritableLocales" : [""],
+              "HasDynamicChildren" : false
+            },
+            "schema": {
+              "$ref": "#/definitions/BACnetanaloginput"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "This Resource describes the Properties associated with Real.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/BACnetanaloginput-update" },
+            "x-example": {
+              "Value":   3.5
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "NodeType":   "Property" ,
+              "ValueType":   "Real",
+              "Value":     3.5
+            },
+            "schema": {
+              "$ref": "#/definitions/BACnetanaloginput"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "interface": {
+      "in": "query",
+      "name": "if",
+      "type": "string",
+      "enum": [
+        "oic.if.rw",
+        "oic.if.baseline"
+      ]
+    }
+  },
+  "definitions": {
+    "BACnetanaloginput": {
+      "properties": {
+        "NodeType":    {
+          "description": "The type of the node.",
+          "type": "string",
+          "enum" : ["Real"],
+          "readOnly": true
+        },
+        "NodeSubtype": {
+          "description": "The sub type of the node.",
+          "type": "string",
+          "readOnly": true
+        },
+        "DisplayName": {
+          "description": "The Display name",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The Description.",
+          "type": "string"
+        },
+        "ValueType": {
+          "description": "The value type of the object.",
+          "type": "string",
+          "enum" : ["Real"],
+          "readOnly": true
+        },
+        "Value": {
+          "description": "The 'real' value of the object.",
+          "type": "number",
+          "readOnly": true
+        },
+        "Units": {
+          "description": "The units of the object.",
+          "type": "string",
+          "readOnly": true
+        },
+        "InAlarm": {
+          "description": "The alarm state",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Minimum": {
+            "description": "minimum value",
+            "type": "number",
+            "readOnly": true
+        },
+        "Maximum": {
+            "description": "maximum value",
+            "type": "number",
+            "readOnly": true
+        },
+        "Resolution": {
+            "description": "resolution of the value",
+            "type": "number",
+            "readOnly": true
+        },
+        "isMultiLine": {
+          "description": "is multi line.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Writeable": {
+          "description": "is value writable.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Aliases": {
+          "description": "The Aliasses supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "Attributes": {
+          "description": "The Attributes supported by this Resource.",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "rt": {
+          "description": "The Resource Type.",
+          "items": {
+            "enum": [
+              "x.bacnet.AnalogValueObject"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "if": {
+          "description": "The OCF Interface set supported by this Resource.",
+          "items": {
+            "enum": [
+              "oic.if.rw", "oic.if.baseline"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "required": [
+        "NodeType",
+        "ValueType",
+        "Value",
+        "Units",
+        "Writeable",
+        "Attributes",
+        "Aliases"
+      ]
+    },
+      "BACnetanaloginput-update": {
+      "properties": {
+        "DisplayName": {
+          "description": "The Display name",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The Description.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
