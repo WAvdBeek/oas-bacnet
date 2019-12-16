@@ -239,8 +239,8 @@
           "type": "string"
         },
         "Value": {
-          "description": "The 'Integer' value of the object.",
-          "type": "integer"
+          "description": "The 'boolean' value of the object, as string.",
+          "type": "string"
         }
       },
       "type": "object"
