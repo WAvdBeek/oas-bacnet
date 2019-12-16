@@ -40,7 +40,7 @@
               "DisplayName":  "DisplayName",
               "Description":  "Description",
               "ValueType":   "Boolean",
-              "Value" : true,
+              "Value" : "true",
               "Units" : "Units",
               "Writable": true,
               "inAlarm": false,
@@ -75,7 +75,7 @@
             "required": true,
             "schema": { "$ref": "#/definitions/BACnetboolean-update" },
             "x-example": {
-              "Value":   true
+              "Value":   "true"
             }
           }
           
@@ -86,7 +86,7 @@
             "x-example": {
               "NodeType":   "Property" ,
               "ValueType":   "Boolean",
-              "Value":     true
+              "Value":     "true"
             },
             "schema": {
               "$ref": "#/definitions/BACnetboolean"
