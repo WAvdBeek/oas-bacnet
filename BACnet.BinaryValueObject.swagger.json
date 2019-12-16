@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.BinaryValueObject"
+                "x.bacnet.binaryvalue"
               ],
               "NodeType":   "Property" ,
               "NodeSubType": "Property",
@@ -194,7 +194,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.BinaryValueObject"
+              "x.bacnet.binaryvalue"
             ],
             "type": "string"
           },

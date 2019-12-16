@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.IntegerValueObject"
+                "x.bacnet.integervalue"
               ],
               "NodeType":   "Property" ,
               "NodeSubType": "Property",
@@ -199,7 +199,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.IntegerValueObject"
+              "x.bacnet.integervalue"
             ],
             "type": "string"
           },

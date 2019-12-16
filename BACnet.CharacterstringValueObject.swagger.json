@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.CharacterstringValueObject"
+                "x.bacnet.characterstringvalue"
               ],
               "NodeType":   "Property" ,
               "NodeSubType": "Property",
@@ -187,7 +187,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.CharacterstringValueObject"
+              "x.bacnet.characterstringvalue"
             ],
             "type": "string"
           },

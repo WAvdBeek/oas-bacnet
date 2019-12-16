@@ -33,7 +33,7 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.AnalogInputObject"
+                "x.bacnet.analoginput"
               ],
               "NodeType":   "Property" ,
               "NodeSubType": "Property",
@@ -200,7 +200,7 @@
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.AnalogValueObject"
+              "x.bacnet.analoginput"
             ],
             "type": "string"
           },
