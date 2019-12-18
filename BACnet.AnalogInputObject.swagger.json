@@ -65,18 +65,27 @@
             "required": true,
             "schema": { "$ref": "#/definitions/BACnetanaloginput-update" },
             "x-example": {
-              "Value":   3.5
+              "object-type": "ObjectType" ,
+              "device-type": "DeviceType",
+              "object-name": "ObjectName"
             }
           }
-          
         ],
         "responses": {
           "200": {
             "description": "",
             "x-example": {
-              "NodeType":   "Property" ,
-              "ValueType":   "Real",
-              "Value":     3.5
+              "object-type": "ObjectType" ,
+              "device-type": "DeviceType",
+              "object-name": "ObjectName",
+              "present-value" : 2.5,
+              "units" : "Units",
+              "min-pres-value": 0.0,
+              "max-pres-value": 100.0,
+              "resolution" : 0.5,
+              "status-flags": "flags",
+              "event-state": false,
+              "out-of-service": false
             },
             "schema": {
               "$ref": "#/definitions/BACnetanaloginput"
@@ -197,6 +206,14 @@
     },
       "BACnetanaloginput-update": {
       "properties": {
+        "object-type": {
+          "description": "The object type",
+          "type": "string"
+        },
+        "device-type": {
+          "description": "The object name",
+          "type": "string"
+        },
         "object-name": {
           "description": "The object name",
           "type": "string"
