@@ -35,7 +35,7 @@
               "rt": [
                 "x.bacnet.analog-input"
               ],
-              "object-type": "ObjectType" ,
+              "object-type": "analog-input" ,
               "device-type": "DeviceType",
               "object-name": "ObjectName",
               "present-value" : 2.5,
@@ -65,9 +65,8 @@
             "required": true,
             "schema": { "$ref": "#/definitions/BACnetanaloginput-update" },
             "x-example": {
-              "object-type": "ObjectType" ,
-              "device-type": "DeviceType",
-              "object-name": "ObjectName"
+              "device-type": "New DeviceType",
+              "object-name": "New ObjectName"
             }
           }
         ],
@@ -75,9 +74,9 @@
           "200": {
             "description": "",
             "x-example": {
-              "object-type": "ObjectType" ,
-              "device-type": "DeviceType",
-              "object-name": "ObjectName",
+              "object-type": "analog-input" ,
+              "device-type": "New DeviceType",
+              "object-name": "New ObjectName",
               "present-value" : 2.5,
               "units" : "Units",
               "min-pres-value": 0.0,
@@ -115,7 +114,8 @@
         },
         "object-type":    {
           "description": "The object type.",
-          "type": "string"
+          "type": "string",
+          "enum" : [ "analog-input"]
         },
         "device-type": {
           "description": "The device type.",
@@ -206,10 +206,6 @@
     },
       "BACnetanaloginput-update": {
       "properties": {
-        "object-type": {
-          "description": "The object type",
-          "type": "string"
-        },
         "device-type": {
           "description": "The object name",
           "type": "string"
