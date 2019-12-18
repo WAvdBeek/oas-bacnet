@@ -33,32 +33,19 @@
             "description": "",
             "x-example": {
               "rt": [
-                "x.bacnet.analoginput"
+                "x.bacnet.analog-input"
               ],
-              "NodeType":   "Property" ,
-              "NodeSubType": "Property",
-              "DisplayName":  "DisplayName",
-              "Description":  "Description",
-              "ValueType":   "Real",
-              "Value" : 2.5,
-              "Units" : "Units",
-              "Writable": true,
-              "inAlarm": false,
-              "Minimum": 0.0,
-              "Maximum": 100.0,
-              "Resolution" : 0.5,
-              "IsMultiLine": false,
-              "Attributes": ["Attributes"],
-              "WriteableValues": ["DisplayName", "Value"],
-              "PossibleValues": ["PossibleValues"],
-              "Overridden": false,
-              "ValueAge" : 123,
-              "Aliases" : ["alias"],
-              "Children" : ["child"],
-              "Reference" : "Reference",
-              "HasHistory" : false,
-              "SinglyWritableLocales" : [""],
-              "HasDynamicChildren" : false
+              "object-type": "ObjectType" ,
+              "device-type": "DeviceType",
+              "object-name": "ObjectName",
+              "present-value" : 2.5,
+              "units" : "Units",
+              "min-pres-value": 0.0,
+              "max-pres-value": 100.0,
+              "resolution" : 0.5,
+              "status-flags": "flags",
+              "event-state": false,
+              "out-of-service": false
             },
             "schema": {
               "$ref": "#/definitions/BACnetanaloginput"
@@ -113,94 +100,68 @@
   "definitions": {
     "BACnetanaloginput": {
       "properties": {
-        "NodeType":    {
-          "description": "The type of the node.",
-          "type": "string",
-          "enum" : ["Real"],
-          "readOnly": true
-        },
-        "NodeSubtype": {
-          "description": "The sub type of the node.",
-          "type": "string",
-          "readOnly": true
-        },
-        "DisplayName": {
-          "description": "The Display name",
+        "object-identifier":    {
+          "description": "The object identifier.",
           "type": "string"
         },
-        "Description": {
-          "description": "The Description.",
+        "object-type":    {
+          "description": "The object type.",
           "type": "string"
         },
-        "ValueType": {
-          "description": "The value type of the object.",
+        "device-type": {
+          "description": "The device type.",
           "type": "string",
-          "enum" : ["Real"],
           "readOnly": true
         },
-        "Value": {
-          "description": "The 'real' value of the object.",
+        "object-name": {
+          "description": "The object name",
+          "type": "string"
+        },
+        "present-value": {
+          "description": "The value (in real) of the object.",
           "type": "number",
           "readOnly": true
         },
-        "Units": {
+        "units": {
           "description": "The units of the object.",
           "type": "string",
           "readOnly": true
         },
-        "InAlarm": {
-          "description": "The alarm state",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "Minimum": {
+        "min-pres-value": {
             "description": "minimum value",
             "type": "number",
             "readOnly": true
         },
-        "Maximum": {
+        "max-pres-value": {
             "description": "maximum value",
             "type": "number",
             "readOnly": true
         },
-        "Resolution": {
+        "resolution": {
             "description": "resolution of the value",
             "type": "number",
             "readOnly": true
         },
-        "isMultiLine": {
-          "description": "is multi line.",
+        "status-flags": {
+          "description": "status flags as string.",
+          "type": "string",
+          "readOnly": true
+        },
+        "event-state": {
+          "description": "the event state.",
           "type": "boolean",
           "readOnly": true
         },
-        "Writeable": {
-          "description": "is value writable.",
+        "out-of-service": {
+          "description": "the event state.",
           "type": "boolean",
           "readOnly": true
-        },
-        "Aliases": {
-          "description": "The Aliasses supported by this Resource.",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true,
-          "readOnly": true,
-          "type": "array"
-        },
-        "Attributes": {
-          "description": "The Attributes supported by this Resource.",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true,
-          "readOnly": true,
-          "type": "array"
         },
         "rt": {
           "description": "The Resource Type.",
           "items": {
             "enum": [
-              "x.bacnet.analoginput"
+              "x.bacnet.analog-input"
             ],
             "type": "string"
           },
@@ -225,23 +186,19 @@
       },
       "type": "object",
       "required": [
-        "NodeType",
-        "ValueType",
-        "Value",
-        "Units",
-        "Writeable",
-        "Attributes",
-        "Aliases"
+        "object-identifier",
+        "object-type",
+        "present-value",
+        "units",
+        "status-flags",
+        "event-state",
+        "out-of-service"
       ]
     },
       "BACnetanaloginput-update": {
       "properties": {
-        "DisplayName": {
-          "description": "The Display name",
-          "type": "string"
-        },
-        "Description": {
-          "description": "The Description.",
+        "object-name": {
+          "description": "The object name",
           "type": "string"
         }
       },
